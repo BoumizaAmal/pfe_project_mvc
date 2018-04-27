@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Gestion des groupes</title>
+<link rel="stylesheet" type="text/css"
+	href="../static/css/bootstrap.min.css.css"
+	th:href="@{/css/bootstrap.min.css.css}" />
+</head>
+<body layout:fragment="content">
+<div class="container">
+<div  class="panel panel-default col-md-6v col-xs-12 col-sm-6 col-md-offset-3" >
+<div class="panel-heading">Formulaire de modification
+</div>
+<div class="panel-body">
+<form th:action="@{UpdateGroupe}" method="post" th:object="${grp}">
+
+<div class="form-group">
+<lable class="control-label">ID :</lable>
+<input type="text" th:field="*{idGrp}" class="form-control"/>
+<span class="text-danger" th:errors="*{idGrp}"></span>
+</div>
+
+
+<div class="form-group">
+<lable class="control-label">Nom :</lable>
+<input type="text" th:field="*{nomGrp}" class="form-control"/>
+<span class="text-danger" th:errors="*{nomGrp}"></span>
+</div>
+
+<div class="form-group">
+<lable class="control-label">Niveau :</lable>
+<input type="text" th:field="*{niveau}" class="form-control"/>
+<span class="text-danger" th:errors="*{niveau}"></span>
+</div>
+
+<div class="form-group">
+<lable class="control-label">Filiere :</lable>
+<input type="text" th:field="*{filiere}" class="form-control"/>
+<span class="text-danger" th:errors="*{filiere}"></span>
+</div>
+
+
+<button  type="submit" class="btn btn-primary"> Confirmer
+</button>
+<button  type="reset" class="btn btn-primary">Annuler
+</button>
+
+
+</form>
+
+</div>
+</div>
+</div>
+</body>
+</html>

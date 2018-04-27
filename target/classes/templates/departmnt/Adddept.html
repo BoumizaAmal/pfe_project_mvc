@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Saisie des filieres</title>
+<link rel="stylesheet" type="text/css"
+	href="../static/css/bootstrap.min.css.css"
+	th:href="@{/css/bootstrap.min.css.css}" />
+</head>
+<body>
+<div class="container">
+<div  class="panel panel-default col-md-6v col-xs-12 col-sm-6 col-md-offset-3" >
+<div  class="panel-heading">Saisie d'une filiere  </div>
+<div class="panel-body">
+<form th:action="@{saveDept}" method="post" th:object="${deprt}"
+>
+<div class="form-group">
+<lable class="control-label">Nom :</lable>
+<input type="text" th:field="*{nom}" class="form-control"/>
+<span class="text-danger" th:errors="*{nom}"></span>
+</div>
+
+
+<div class="form-group">
+<lable class="control-label">Chef de departement :</lable>
+<input type="text" th:field="*{chefDepartment}" class="form-control"/>
+<span class="text-danger" th:errors="*{chefDepartment}"></span>
+</div>
+
+<div class="form-group">
+<lable class="control-label">Secretaire :</lable>
+<input type="text" th:field="*{secretaire}" class="form-control"/>
+<span class="text-danger" th:errors="*{secretaire}"></span>
+</div>
+
+<div class="form-group">
+<lable class="control-label">Nombre des techniciens :</lable>
+<input type="text" th:field="*{nbrTechnicien}" class="form-control"/>
+<span class="text-danger" th:errors="*{nbrTechnicien}"></span>
+</div>
+
+<div class="form-group">
+<lable class="control-label">Nombre des bureaux :</lable>
+<input type="text" th:field="*{nbrBureaux}" class="form-control"/>
+<span class="text-danger" th:errors="*{nbrBureaux}"></span>
+</div>
+<button  type="submit" class="btn btn-primary"> Ajouter
+</button>
+<button  type="reset" class="btn btn-primary">Annuler
+</button>
+
+
+</form>
+
+</div>
+</div>
+</div>
+</body>
+</html>

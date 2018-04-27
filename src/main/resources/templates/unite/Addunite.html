@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Saisie des Etudiants</title>
+<link rel="stylesheet" type="text/css"
+	href="../static/css/bootstrap.min.css.css"
+	th:href="@{/css/bootstrap.min.css.css}" />
+</head>
+<body>
+<div class="container">
+<div  class="panel panel-default col-md-6v col-xs-12 col-sm-6 col-md-offset-3" >
+<div  class="panel-heading">Saisie d'une unite  </div>
+<div class="panel-body">
+<form th:action="@{saveUnite}" method="post" th:object="${unite}"
+>
+<div class="form-group">
+<lable class="control-label">Nom :</lable>
+<input type="text" th:field="*{nomUnite}" class="form-control"/>
+<span class="text-danger" th:errors="*{nomUnite}"></span>
+</div>
+
+<div class="form-group">
+<lable class="control-label">Nombre des matiers :</lable>
+<input type="text" th:field="*{nbrMatier}" class="form-control"/>
+<span class="text-danger" th:errors="*{nbrMatier}"></span>
+</div>
+
+<div class="form-group">
+<lable class="control-label">Type :</lable>
+<input type="text" th:field="*{type}" class="form-control"/>
+<span class="text-danger" th:errors="*{type}"></span>
+</div>
+
+<div class="form-group">
+<lable class="control-label">Coefficient :</lable>
+<input type="text" th:field="*{coefficient}" class="form-control"/>
+<span class="text-danger" th:errors="*{coefficient}"></span>
+</div>
+
+
+<button  type="submit" class="btn btn-primary"> Ajouter
+</button>
+<button  type="reset" class="btn btn-primary">Annuler
+</button>
+
+
+</form>
+
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "PFE",
+  "authors": [
+    "ilyesbenaicha <ilyesbenaicha09@gmail.com>"
+  ],
+  "description": "PFE",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vue": "^2.5.16"
+  }
+}

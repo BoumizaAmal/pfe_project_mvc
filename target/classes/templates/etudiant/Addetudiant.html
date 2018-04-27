@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+th:lang="${#locale.language}"  xmlns="http://www.w3.org/1999/xhtml"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="template">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>gestion scolarité</title>
+<link rel="stylesheet" type="text/css"
+	href="../static/css/bootstrap.min.css.css"
+	th:href="@{/css/bootstrap.min.css.css}" />
+
+</head>
+<body layout:fragment="content">
+<br/>
+<br/>
+<br/>
+<center><h1>Gestion des etudiants</h1></center>
+<div class="container">
+<div  class="panel panel-default col-md-6v col-xs-12 col-sm-6 col-md-offset-3" >
+<div  class="panel-heading">Saisie d'un Etudiant </div>
+
+<div   class="panel-body">
+
+<form th:action="@{saveEtudiant}" method="POST" th:object="${etudiant}" >
+<div class="form-group">
+<lable class="control-label">Nom :</lable>
+<input type="text" th:field="*{nom}" class="form-control"/>
+<span class="text-danger" th:errors="*{nom}"></span>
+</div>
+
+
+<div class="form-group">
+<lable class="control-label">Prenom :</lable>
+<input type="text" th:field="*{prenom}" class="form-control"/>
+<span class="text-danger" th:errors="*{prenom}"></span>
+</div>
+
+
+<div class="form-group">
+<lable class="control-label">CIN :</lable>
+<input type="text" th:field="*{cin}" class="form-control"/>
+<span class="text-danger" th:errors="*{cin}"></span>
+</div>
+
+
+<div class="form-group">
+<lable class="control-label">Date de naissance :</lable>
+<input type="date" th:field="*{dateNaissance}" class="form-control"/>
+<span class="text-danger" th:errors="*{dateNaissance}"></span>
+</div>
+
+
+<div class="form-group">
+<lable class="control-label">Age :</lable>
+<input type="text" th:field="*{age}" class="form-control"/>
+<span class="text-danger" th:errors="*{age}"></span>
+</div>
+
+
+<div class="form-group">
+<lable class="control-label">Email :</lable>
+<input type="text" th:field="*{email}" class="form-control"/>
+<span class="text-danger" th:errors="*{email}"></span>
+</div>
+
+<div class="form-group">
+<lable class="control-label">Adresse :</lable>
+<input type="text" th:field="*{adresse}" class="form-control"/>
+<span class="text-danger" th:errors="*{adresse}"></span>
+</div>
+
+
+<div class="form-group">
+<lable class="control-label">Telephone :</lable>
+<input type="text" th:field="*{tel}" class="form-control"/>
+<span class="text-danger" th:errors="*{tel}"></span>
+</div>
+
+
+<div class="form-group">
+<lable class="control-label">Passeport :</lable>
+<input type="text" th:field="*{passport}" class="form-control"/>
+<span class="text-danger" th:errors="*{passport}"></span>
+</div>
+
+
+<div class="form-group">
+<lable class="control-label">Login :</lable>
+<input type="text" th:field="*{login}" class="form-control"/>
+<span class="text-danger" th:errors="*{login}"></span>
+</div>
+
+
+<div class="form-group">
+<lable class="control-label">Mot de passe :</lable>
+<input type="text" th:field="*{password}" class="form-control"/>
+<span class="text-danger" th:errors="*{password}"></span>
+</div>
+
+
+<div class="form-group">
+<lable class="control-label">Matricule :</lable>
+<input type="text" th:field="*{matricule}" class="form-control"/>
+<span class="text-danger" th:errors="*{matricule}"></span>
+</div>
+
+
+<div class="form-group">
+<lable class="control-label">Date d'inscription :</lable>
+<input type="date" th:field="*{dateInscrit}" class="form-control"/>
+<span class="text-danger" th:errors="*{dateInscrit}"></span>
+</div>
+
+
+<div class="form-group">
+<lable class="control-label">Date d'obtention bac :</lable>
+<input type="date" th:field="*{dateObtentionBAC}" class="form-control"/>
+<span class="text-danger" th:errors="*{dateObtentionBAC}"></span>
+</div>
+
+
+<div class="form-group">
+<lable class="control-label">Situation :</lable>
+<input type="text" th:field="*{situation}" class="form-control"/>
+<span class="text-danger" th:errors="*{situation}"></span>
+</div>
+
+ <label   class="control-label">Groupe:</label> 
+ 
+   <select th:field="*{groupe}">
+                <option th:each="c:${groupeList}" 
+                        th:value="${c.idGrp}" th:text="${c.nomGrp}">Groupe</option>
+            </select>
+
+<br/>
+<br/>
+ <label   class="control-label">Projet de fin d'etude :</label> 
+ 
+   <select th:field="*{pfe}">
+                <option th:each="c:${pfeList}" 
+                        th:value="${c.idPFE}" th:text="${c.sujet}">PFE</option>
+            </select>
+<br/>
+<br/>
+<button  type="submit" class="btn btn-primary"> Ajouter
+</button>
+<button  type="reset" class="btn btn-primary">Annuler
+</button>
+</div>
+
+</form>
+</div>
+</div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+th:lang="${#locale.language}"  xmlns="http://www.w3.org/1999/xhtml"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="template">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>gestion scolarité</title>
+<link rel="stylesheet" type="text/css"
+	href="../static/css/bootstrap.min.css.css"
+	th:href="@{/css/bootstrap.min.css.css}" />
+
+</head>
+<body layout:fragment="content">
+<br/>
+<br/>
+<br/>
+<center><h1>Gestion des enseignants</h1></center>
+<div class="container">
+<div  class="panel panel-default col-md-6v col-xs-12 col-sm-6 col-md-offset-3" >
+<div  class="panel-heading">Saisie d'un Enseignant </div>
+
+<div   class="panel-body">
+
+<form th:action="@{saveEns}" method="POST" th:object="${enseignant}" >
+<div class="form-group">
+<lable class="control-label">Nom :</lable>
+<input type="text" th:field="*{nom}" class="form-control"/>
+<span class="text-danger" th:errors="*{nom}"></span>
+</div>
+
+
+<div class="form-group">
+<lable class="control-label">Prenom :</lable>
+<input type="text" th:field="*{prenom}" class="form-control"/>
+<span class="text-danger" th:errors="*{prenom}"></span>
+</div>
+
+
+<div class="form-group">
+<lable class="control-label">CIN :</lable>
+<input type="text" th:field="*{cin}" class="form-control"/>
+<span class="text-danger" th:errors="*{cin}"></span>
+</div>
+
+
+<div class="form-group">
+<lable class="control-label">Date de naissance :</lable>
+<input type="date" th:field="*{dateNaissance}" class="form-control"/>
+<span class="text-danger" th:errors="*{dateNaissance}"></span>
+</div>
+
+
+<div class="form-group">
+<lable class="control-label">Age :</lable>
+<input type="text" th:field="*{age}" class="form-control"/>
+<span class="text-danger" th:errors="*{age}"></span>
+</div>
+
+
+<div class="form-group">
+<lable class="control-label">Email :</lable>
+<input type="text" th:field="*{email}" class="form-control"/>
+<span class="text-danger" th:errors="*{email}"></span>
+</div>
+
+<div class="form-group">
+<lable class="control-label">Adresse :</lable>
+<input type="text" th:field="*{adresse}" class="form-control"/>
+<span class="text-danger" th:errors="*{adresse}"></span>
+</div>
+
+
+<div class="form-group">
+<lable class="control-label">Telephone :</lable>
+<input type="text" th:field="*{tel}" class="form-control"/>
+<span class="text-danger" th:errors="*{tel}"></span>
+</div>
+
+
+<div class="form-group">
+<lable class="control-label">Passeport :</lable>
+<input type="text" th:field="*{passport}" class="form-control"/>
+<span class="text-danger" th:errors="*{passport}"></span>
+</div>
+
+
+<div class="form-group">
+<lable class="control-label">Login :</lable>
+<input type="text" th:field="*{login}" class="form-control"/>
+<span class="text-danger" th:errors="*{login}"></span>
+</div>
+
+
+<div class="form-group">
+<lable class="control-label">Mot de passe :</lable>
+<input type="text" th:field="*{password}" class="form-control"/>
+<span class="text-danger" th:errors="*{password}"></span>
+</div>
+
+
+<div class="form-group">
+<lable class="control-label">Grade :</lable>
+<input type="text" th:field="*{grade}" class="form-control"/>
+<span class="text-danger" th:errors="*{grade}"></span>
+</div>
+
+
+<div class="form-group">
+<lable class="control-label">Specialite :</lable>
+<input type="text" th:field="*{specialite}" class="form-control"/>
+<span class="text-danger" th:errors="*{specialite}"></span>
+</div>
+
+
+<div class="form-group">
+<lable class="control-label">Diplome :</lable>
+<input type="text" th:field="*{diplome}" class="form-control"/>
+<span class="text-danger" th:errors="*{diplome}"></span>
+</div>
+
+</br>
+</br>
+
+<div class="form-group col-md-6">
+<label>Disponibilite encadrement :</label>
+<div class="radio">
+  <label><input type="radio" name="optradio">Disponible</label>
+</div>
+<div class="radio">
+  <label><input type="radio" name="optradio">Indisponible</label>
+</div>
+
+ 
+
+
+
+<button  type="submit" class="btn btn-primary"> Ajouter
+</button>
+<button  type="reset" class="btn btn-primary">Annuler
+</button>
+</div>
+
+</form>
+</div>
+</div>
+</div>
+
+
+</body>
+</html>

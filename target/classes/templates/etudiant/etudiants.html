@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Liste des etudiants</title>
+<link rel="stylesheet" type="text/css"
+	href="../static/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body >
+<div class="container spacer">
+<form th:action="@{Index}" method="get">
+<div class="form-group">
+<label>Mot Clé :</label>
+<input type="text" name="motCle" />
+<button type="submit">Chercher</button>
+</div>
+</form>
+</div>
+<div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+    <thead>
+    <a th:href="@{form}"> Ajouter nouvel etudiant</a>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>CIN</th>
+            <th>Date de naissance </th>
+            <th>Age </th>
+            <th>Email</th>
+            <th>Adresse </th>
+            <th>Teléphone</th>
+            <th>Passeport </th>
+            <th>Login </th>
+            <th>Password </th>
+            <th>Matricule</th>
+            <th>Date d'inscription </th>
+            <th>Date d'obtention BAC</th>
+            <th>Situation </th>
+            <th> Groupe </th>
+            <th> PFE </th>
+            <th class="text-center">Action</th>
+        </tr>
+        </thead>
+   
+   <tr th:each="e:${pageEtudiant.content}">
+                <td th:text="${e.id}"></td>
+                <td th:text="${e.nom}"></td>
+                <td th:text="${e.prenom}"></td>
+                <td th:text="${e.cin}"></td>
+                <td th:text="${e.dateNaissance}"></td>
+                <td th:text="${e.age}"></td>
+                <td th:text="${e.email}"></td>
+                <td th:text="${e.adresse}"></td>
+                <td th:text="${e.tel}"></td>
+                <td th:text="${e.passport}"></td>
+                <td th:text="${e.login}"></td>
+                <td th:text="${e.password}"></td>
+                <td th:text="${e.matricule}"></td>
+                <td th:text="${e.dateInscrit}"></td>
+                <td th:text="${e.dateObtentionBAC}"></td>
+                <td th:text="${e.situation}"></td>
+                	<td
+				 th:text="${e.groupe}" 
+                        >
+					</td>
+					
+					<td th:text="${e.pfe}" 
+                        >
+					</td>
+					
+       <td class="text-center"><a  class='btn btn-info btn-xs'  th:href="@{edit(id=${e.id})}"><span class="glyphicon glyphicon-edit" ></span> Edit</a> 
+       <a onclick="return confirm('Etes vous sure?')" th:href="@{supprimer(id=${e.id})}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove" ></span> Delete</a></td>
+            </tr>
+  </table>
+   </div>
+   </div>
+
+<div class="container">
+  <ul class="nav nav-pills">
+  <li th:each="p:${pages}" th:class="${p==pageCourante}?active:''">
+ <a th:text="${p}" th:href="@{Index(page=${p})}"></a>
+  </li>
+  
+  </ul>
+</div>
+
+
+</body>
+</html>

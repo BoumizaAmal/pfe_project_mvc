@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Gestion des unites</title>
+<link rel="stylesheet" type="text/css"
+	href="../static/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body layout:fragment="content">
+<div class="col-md-6 col-sm-6 col-xs-12 spacer col-md-3">
+<div class="panel panel-default " >
+<div class="panel-heading">Formulaire d'une unité
+</div>
+<div class="panel-body">
+<form th:action="@{UpdateUnite}" method="post" th:object="${unite}">
+<div class="form-group">
+<lable class="control-label">ID :</lable>
+<input type="text" th:field="*{idUnite}" class="form-control"/>
+<span class="text-danger" th:errors="*{idUnite}"></span>
+</div>
+
+
+<div class="form-group">
+<lable class="control-label">Nom :</lable>
+<input type="text" th:field="*{nomUnite}" class="form-control"/>
+<span class="text-danger" th:errors="*{nomUnite}"></span>
+</div>
+
+<div class="form-group">
+<lable class="control-label">Nombre des matiers :</lable>
+<input type="text" th:field="*{nbrMatier}" class="form-control"/>
+<span class="text-danger" th:errors="*{nbrMatier}"></span>
+</div>
+
+<div class="form-group">
+<lable class="control-label">Type :</lable>
+<input type="text" th:field="*{type}" class="form-control"/>
+<span class="text-danger" th:errors="*{type}"></span>
+</div>
+
+<div class="form-group">
+<lable class="control-label">Coefficient :</lable>
+<input type="text" th:field="*{coefficient}" class="form-control"/>
+<span class="text-danger" th:errors="*{coefficient}"></span>
+</div>
+
+
+<button  type="submit" class="btn btn-primary"> Confirmer
+</button>
+<button  type="reset" class="btn btn-primary">Annuler
+</button>
+
+
+</form>
+
+</div>
+</div>
+</div>
+</body>
+</html>
